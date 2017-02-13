@@ -9,7 +9,7 @@ class Movie < ActiveRecord::Base
 
   scope :featured, -> { where(featured: true) }
 
-  scope :recent, -> { where(release_date: 1.month.ago..Date.today).order(created_at: :desc) }
+  scope :recent, -> { where(release_date: 1.month.ago.to_date..Date.today).order(created_at: :desc) }
 
   belongs_to :director, counter_cache: true
 	has_many :reviews
@@ -29,7 +29,7 @@ class Movie < ActiveRecord::Base
   validates :name, presence: true
   validates :name, length: { in: 2..30}
 
-  validates :about, length: { in: 5..200} 
+  # validates :about, length: { in: 5..200} 
 
   	def feature
   		self.update_attribute(:featured, true)

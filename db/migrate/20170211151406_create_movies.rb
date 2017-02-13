@@ -2,6 +2,7 @@ class CreateMovies < ActiveRecord::Migration
   def change
     create_table :movies do |t|
       t.string :poster
+      t.belongs_to :director
       t.text :about
       t.boolean :featured, default: false
       t.string :name, null: false

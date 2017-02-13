@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20170212210139) do
 
   create_table "movies", force: :cascade do |t|
     t.string   "poster"
+    t.integer  "director_id"
     t.text     "about"
     t.boolean  "featured",              default: false
     t.string   "name",                                  null: false
@@ -136,6 +137,10 @@ ActiveRecord::Schema.define(version: 20170212210139) do
     t.string   "last_sign_in_ip"
     t.integer  "reviews_count"
     t.integer  "watchlist_items_count"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

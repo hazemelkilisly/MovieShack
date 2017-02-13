@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :admins
+    resources :users
+    resources :actors
+    resources :awards
+    resources :awards_awardees
+    resources :directors
+    resources :genres
+    resources :movies
+    resources :movies_actors
+    resources :movies_genres
+    resources :news
+    resources :reviews
+    resources :watchlist_items
+
+    root to: "admins#index"
+  end
+
   root to: 'home#index'
 
   devise_for :admins

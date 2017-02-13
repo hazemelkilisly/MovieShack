@@ -1,0 +1,36 @@
+<div class="container marketing">
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading"><%=@user.name%></h2>
+      <p class="lead"><%=@user.about%></p>
+    </div>
+    <div class="col-md-5%>">
+      <% if @user.avatar.file.nil? %>
+        <%=image_tag 'profile_cover.jpg', alt: @user.name, class:"featurette-image img-responsive center-block" %>
+      <% else %>
+        <%=image_tag @user.avatar.url, alt: @user.name, class:"featurette-image img-responsive center-block" %>
+      <% end %>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+  <h2 class="featurette-heading text-center"><span class="text-muted">Watchlist</span></h2>
+      <div class="row">
+        <% if @watchlist && !@watchlist.empty? %>
+          <% @watchlist.each do |movie| %>
+            <div class="col-lg-4">
+              <%image_tag movie.poster.url, alt: movie.name, style: 'width: 140px; height: 140px;', class: 'img-circle'%>
+              <h2><%=movie.name%></h2>
+              <p><%=movie.about%></p>
+              <p>
+              <%= link_to 'View Details', movie, class: 'btn btn-default'%> 
+              </p>
+            </div><!-- /.col-lg-4 -->
+          <% end %>
+        <% else %>
+            <div class="jumbotron">
+              <p>No Movies in watchlist found.</p>
+            </div>
+        <% end %>
+      </div><!-- /.row -->
+</div><!-- /.container -->

@@ -3,15 +3,15 @@ class MoviesController < ApplicationController
   before_action :prepare_movie, except: [:index, :featured, :recent]
 
   def index
-    @movies = Movie.page(curr_page)
+    @movies = Movie.page(@curr_page)
   end
 
   def featured
-    @movies = Movie.featured.page(curr_page)
+    @movies = Movie.featured.page(@curr_page)
   end
 
   def recent
-    @movies = Movie.recent.page(curr_page)
+    @movies = Movie.recent.page(@curr_page)
   end
 
   def show
@@ -51,7 +51,7 @@ class MoviesController < ApplicationController
 
   private
   def set_pagination
-    curr_page = params[:page] || 1
+    @curr_page = params[:page] || 1
   end
 
   def prepare_movie

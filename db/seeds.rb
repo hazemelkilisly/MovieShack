@@ -9,4 +9,4 @@
 
 actor = Actor.create(name: "Ahmed Fahmy")
 director = Director.create(name: "Dollar Film")
-movie = Movie.create(name: "Kalby Daleely", rating: 'PG', release_date: 1.month.ago, director: director)
+movie = Movie.create(name: "Kalby Daleely", rating: 'PG', release_date: 1.month.ago, director: director, featured: true)

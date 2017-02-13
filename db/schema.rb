@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(version: 20170212210139) do
   end
 
   create_table "news", force: :cascade do |t|
-    t.string   "tile",       null: false
+    t.string   "title",      null: false
     t.text     "desc",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

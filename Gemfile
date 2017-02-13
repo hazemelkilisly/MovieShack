@@ -29,6 +29,7 @@ gem 'devise'
 gem 'mini_magick', '4.0.0'
 gem 'carrierwave', '~> 1.0'
 gem 'will_paginate', '~> 3.1.0'
+# gem "administrate", "~> 0.3.0"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

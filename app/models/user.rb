@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   has_many :watchlist_item, dependent: :destroy
-  has_many :watchlist, through: :watchlist_item, :source => :movies
+  has_many :watchlist, through: :watchlist_item, :source => :movie
   has_many :reviews
   validates :name, presence: true
   validates :name, length: { in: 3..20} 

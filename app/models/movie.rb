@@ -31,6 +31,10 @@ class Movie < ActiveRecord::Base
 
   # validates :about, length: { in: 5..200} 
 
+    # def poster_image
+    #   poster.file.nil? ? './assets/images/profile_cover.jpg' : poster.url 
+    # end
+
   	def feature
   		self.update_attribute(:featured, true)
   	end
